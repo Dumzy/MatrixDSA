@@ -55,8 +55,7 @@ public class UserView extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 160, 50));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 50));
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 190, 30));
         jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 190, 30));
         jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 190, 30));
