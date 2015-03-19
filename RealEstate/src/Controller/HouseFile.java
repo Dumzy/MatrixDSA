@@ -26,5 +26,7 @@ public class HouseFile {
     
     public void getData(){
         
+        System.out.println("dfasfasasd");
+        
     }
 }
