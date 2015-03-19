@@ -16,25 +16,4 @@ import java.io.IOException;
  */
 public class HouseFile {
     
-    private String fileName = "HouseFile.txt";
-    
-    public void addData(ListHouse house) throws IOException{
-        
-        FileWriter fileWriter = new FileWriter(fileName, true);
-        BufferedWriter write = new BufferedWriter(fileWriter);
-        
-        write.write(String.valueOf(house.getLotNumber()));
-        write.newLine();
-        write.write(house.getLotNumber());
-        write.newLine();
-        write.write(house.getLotNumber());
-        write.newLine();
-        write.write(String.valueOf(house.getPrice()));
-        write.newLine();
-        write.write(String.valueOf(house.getSquareFeet()));
-        write.newLine();
-        write.write(String.valueOf(house.getBedRooms()));
-        write.newLine();
-        write.close();
-    }    
 }
