@@ -27,6 +27,32 @@ public class ListHouse implements Listable{
         this.squareFeet = squareFeet;
         this.bedRooms = bedRooms;
     }
+
+    public int getLotNumber() {
+        return lotNumber;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public double getSquareFeet() {
+        return squareFeet;
+    }
+
+    public int getBedRooms() {
+        return bedRooms;
+    }
+    
+    
     
     @Override
     public void copy() {
