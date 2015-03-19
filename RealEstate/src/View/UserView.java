@@ -6,7 +6,7 @@
 
 package View;
 
-import Controller.HouseFile;
+//import Controller.HouseFile;
 import Controller.ListHouse;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  */
 public class UserView extends javax.swing.JFrame {
 
-    HouseFile h = new HouseFile();
+//    HouseFile h = new HouseFile();
     
     public UserView() {
         initComponents();
@@ -131,19 +131,19 @@ public class UserView extends javax.swing.JFrame {
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         
-        int lotNumber = Integer.parseInt(txtfldLotnumber.getText());
-        String firstName = txtfldFirstname.getText();
-        String lastName = txtfldLastname.getText();
-        double price = Double.parseDouble(txtfldPrice.getText());
-        double squareFeet = Double.parseDouble(txtfldSquarefeet.getText());
-        int bedRooms = Integer.parseInt(txtfldNumberofbedrooms.getText());
-        
-        ListHouse house = new ListHouse(lotNumber, firstName, lastName, price, squareFeet, bedRooms);
-        try {
-            h.addData(house);
-        } catch (IOException ex) {
-            Logger.getLogger(UserView.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        int lotNumber = Integer.parseInt(txtfldLotnumber.getText());
+//        String firstName = txtfldFirstname.getText();
+//        String lastName = txtfldLastname.getText();
+//        double price = Double.parseDouble(txtfldPrice.getText());
+//        double squareFeet = Double.parseDouble(txtfldSquarefeet.getText());
+//        int bedRooms = Integer.parseInt(txtfldNumberofbedrooms.getText());
+//        
+//        ListHouse house = new ListHouse(lotNumber, firstName, lastName, price, squareFeet, bedRooms);
+//        try {
+//            h.addData(house);
+//        } catch (IOException ex) {
+//            Logger.getLogger(UserView.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }//GEN-LAST:event_btnAddActionPerformed
 
     /**
