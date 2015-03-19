@@ -27,4 +27,8 @@ public class HouseFile {
         System.out.println("dfasfasasd");
         
     }
+    
+    public void reset(){
+        
+    }
 }
