@@ -17,16 +17,8 @@ import java.io.IOException;
 public class HouseFile {
     
     private String fileName = "HouseFile.txt";
-    
     public void addData() throws IOException{
-        
         FileWriter fileWriter = new FileWriter(fileName, true);
         BufferedWriter write = new BufferedWriter(fileWriter);
-
-    }
-    
-    public void getData(){
-        
-    }
-
+   }    
 }
