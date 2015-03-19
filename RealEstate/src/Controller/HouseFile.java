@@ -35,5 +35,6 @@ public class HouseFile {
         write.newLine();
         write.write(String.valueOf(house.getBedRooms()));
         write.newLine();
+        write.close();
     }    
 }
