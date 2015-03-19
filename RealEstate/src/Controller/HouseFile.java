@@ -25,9 +25,9 @@ public class HouseFile {
         
         write.write(String.valueOf(house.getLotNumber()));
         write.newLine();
-        write.write(house.getLotNumber());
+        write.write(house.getFirstName());
         write.newLine();
-        write.write(house.getLotNumber());
+        write.write(house.getLastName());
         write.newLine();
         write.write(String.valueOf(house.getPrice()));
         write.newLine();
