@@ -6,15 +6,20 @@
 
 package View;
 
+import Controller.HouseFile;
+import Controller.ListHouse;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Milton
  */
 public class UserView extends javax.swing.JFrame {
 
-    /**
-     * Creates new form UserView
-     */
+    HouseFile h = new HouseFile();
+    
     public UserView() {
         initComponents();
     }
@@ -96,6 +101,11 @@ public class UserView extends javax.swing.JFrame {
         jPanel1.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 170, 40));
 
         btnAdd.setText("Add");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 170, 40));
 
         btnClear.setText("Clear");
@@ -118,6 +128,23 @@ public class UserView extends javax.swing.JFrame {
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnResetActionPerformed
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        
+        int lotNumber = Integer.parseInt(txtfldLotnumber.getText());
+        String firstName = txtfldFirstname.getText();
+        String lastName = txtfldLastname.getText();
+        double price = Double.parseDouble(txtfldPrice.getText());
+        double squareFeet = Double.parseDouble(txtfldSquarefeet.getText());
+        int bedRooms = Integer.parseInt(txtfldNumberofbedrooms.getText());
+        
+        ListHouse house = new ListHouse(lotNumber, firstName, lastName, price, squareFeet, bedRooms);
+        try {
+            h.addData(house);
+        } catch (IOException ex) {
+            Logger.getLogger(UserView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnAddActionPerformed
 
     /**
      * @param args the command line arguments
