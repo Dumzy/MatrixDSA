@@ -24,7 +24,5 @@ public class HouseFile {
         BufferedWriter write = new BufferedWriter(fileWriter);
     }
     
-    public void getData(){
-        
-    }
+   
 }
