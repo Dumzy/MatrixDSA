@@ -20,5 +20,5 @@ public class HouseFile {
     public void addData() throws IOException{
         FileWriter fileWriter = new FileWriter(fileName, true);
         BufferedWriter write = new BufferedWriter(fileWriter);
-   }    
+    }
 }
