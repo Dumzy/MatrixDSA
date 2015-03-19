@@ -22,5 +22,9 @@ public class HouseFile {
         
         FileWriter fileWriter = new FileWriter(fileName, true);
         BufferedWriter write = new BufferedWriter(fileWriter);
-    }    
+    }
+    
+    public void getData(){
+        
+    }
 }
