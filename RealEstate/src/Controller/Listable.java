@@ -12,5 +12,6 @@ package Controller;
  */
 public interface Listable {
     public void copy();
-    public int compareTo(int lotNumber);    
+    public int compareTo(int lotNumber);  
+    
 }
