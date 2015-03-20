@@ -8,6 +8,7 @@ package View;
 
 import Controller.HouseFile;
 import Controller.ListHouse;
+import Controller.SortedList;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,6 +19,7 @@ import java.util.logging.Logger;
  */
 public class UserView extends javax.swing.JFrame {
 
+    public static SortedList list = new SortedList();
     HouseFile h = new HouseFile();
     
     public UserView() {
