@@ -6,7 +6,11 @@
 
 package Controller;
 
+import View.UserView;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -37,9 +41,17 @@ public class HouseFile {
         write.close();
     }
     
-    public void getData(){
+    public void getData() throws FileNotFoundException, IOException{
         
-        System.out.println("dfasfasasd");
+        String line = null;        
+        
+        FileReader fileReader = new FileReader("HouseFile.txt");
+        BufferedReader read =new BufferedReader(fileReader);
+            
+        while((line = read.readLine()) != null) {
+            UserView.list.add(line);
+        }
+        read.close();        
         
     }
     
