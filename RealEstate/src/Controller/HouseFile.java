@@ -21,6 +21,7 @@ import java.io.IOException;
 public class HouseFile {
     
     private String fileName = "HouseFile.txt";
+    
     public void addData(ListHouse house) throws IOException{
         
         FileWriter fileWriter = new FileWriter(fileName, true);
@@ -58,4 +59,9 @@ public class HouseFile {
     public void reset(){
         
     }
+    
+   public void delete(){
+   
+   }
+    
 }
