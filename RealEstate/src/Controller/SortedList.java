@@ -6,12 +6,12 @@
 
 package Controller;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Milton
  */
-public interface Listable {
-    public void copy();
-    public int compareTo(int lotNumber);  
+public class SortedList extends ArrayList{
     
 }
