@@ -69,7 +69,8 @@ public class HouseFile {
     
     }
     
-    public void nextHouse(){
+    public ListHouse nextHouse(){
+        return null;
         
     }
     
