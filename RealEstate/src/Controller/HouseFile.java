@@ -69,4 +69,8 @@ public class HouseFile {
     
     }
     
+    public void nextHouse(){
+        
+    }
+    
 }
