@@ -60,8 +60,13 @@ public class HouseFile {
         
     }
     
-   public void delete(){
-   
-   }
+    public void delete(){
+
+    }
+    
+    public ListHouse find(){
+        return null;
+    
+    }
     
 }
