@@ -28,6 +28,9 @@ public class ListHouse implements Listable{
         this.bedRooms = bedRooms;
     }
     
+    public void compareTo(){
+        
+    }
     
     public ListHouse(){
     
