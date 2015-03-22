@@ -27,6 +27,14 @@ public class ListHouse implements Listable{
         this.squareFeet = squareFeet;
         this.bedRooms = bedRooms;
     }
+    
+    public void compareTo(){
+        
+    }
+    
+    public ListHouse(){
+    
+    }
 
     public int getLotNumber() {
         return lotNumber;
