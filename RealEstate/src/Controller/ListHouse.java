@@ -30,13 +30,14 @@ public class ListHouse implements Listable{
         this.bedRooms = bedRooms;
     }
     
-    public void compareTo(){
+    public int compareTo(int lotNumber){
         int position = 0;
         int i = 0;
         
         for(i=0 ; i < UserView.list.size(); i++){
             
         }
+        return 0;
     }
     
     public ListHouse(){
@@ -74,9 +75,6 @@ public class ListHouse implements Listable{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public int compareTo(int lotNumber) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
     
 }
