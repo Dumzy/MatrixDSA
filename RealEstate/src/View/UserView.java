@@ -21,6 +21,7 @@ public class UserView extends javax.swing.JFrame {
 
     public static SortedList list = new SortedList();
     HouseFile h = new HouseFile();
+    ListHouse lh = new ListHouse();
     
     public UserView() {
         initComponents();
@@ -114,6 +115,11 @@ public class UserView extends javax.swing.JFrame {
         jPanel1.add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 170, 40));
 
         btnFind.setText("Find");
+        btnFind.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFindActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnFind, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, 170, 40));
 
         btnDelete.setText("Delete");
@@ -156,6 +162,16 @@ public class UserView extends javax.swing.JFrame {
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnNextActionPerformed
+
+    private void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
+        try {
+            // TODO add your handling code here:
+            h.getData();
+            lh.compareTo(Integer.parseInt( txtfldLotnumber.getText()));
+        } catch (IOException ex) {
+            Logger.getLogger(UserView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnFindActionPerformed
 
     /**
      * @param args the command line arguments
