@@ -37,7 +37,7 @@ public class ListHouse implements Listable{
         for(i=0 ; i < UserView.list.size(); i++){
             
         }
-        return 0;
+        return position;
     }
     
     public ListHouse(){
