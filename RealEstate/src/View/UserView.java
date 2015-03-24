@@ -21,6 +21,7 @@ public class UserView extends javax.swing.JFrame {
 
     public static SortedList list = new SortedList();
     HouseFile h = new HouseFile();
+    ListHouse lh = new ListHouse();
     
     public UserView() {
         initComponents();
@@ -163,7 +164,13 @@ public class UserView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNextActionPerformed
 
     private void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
-        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+            h.getData();
+            lh.compareTo(Integer.parseInt( txtfldLotnumber.getText()));
+        } catch (IOException ex) {
+            Logger.getLogger(UserView.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnFindActionPerformed
 
     /**
