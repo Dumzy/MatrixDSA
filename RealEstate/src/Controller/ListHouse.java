@@ -34,8 +34,10 @@ public class ListHouse implements Listable{
         int position = 0;
         int i = 0;
         
-        for(i=0 ; i < UserView.list.size(); i++){
-            
+        while(i < UserView.list.size()){
+            if((UserView.list.get(i).toString().compareToIgnoreCase(String.valueOf(lotNumber))) == 0){
+                
+            }
         }
         return position;
     }
