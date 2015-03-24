@@ -6,6 +6,8 @@
 
 package Controller;
 
+import View.UserView;
+
 /**
  *
  * @author Milton
@@ -29,7 +31,12 @@ public class ListHouse implements Listable{
     }
     
     public void compareTo(){
+        int position = 0;
+        int i = 0;
         
+        for(i=0 ; i < UserView.list.size(); i++){
+            
+        }
     }
     
     public ListHouse(){
