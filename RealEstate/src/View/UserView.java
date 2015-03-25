@@ -168,8 +168,8 @@ public class UserView extends javax.swing.JFrame {
         try {
             // TODO add your handling code here:
             h.getData();
-            lh.compareTo(Integer.parseInt( txtfldLotnumber.getText()));
-            ListHouse house = h.find();
+            int position = lh.compareTo(Integer.parseInt(txtfldLotnumber.getText()));
+            ListHouse house = h.find(position);
             
             txtfldLotnumber.setText(String.valueOf(house.getLotNumber()));
             txtfldFirstname.setText(house.getFirstName());
