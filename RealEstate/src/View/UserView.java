@@ -164,10 +164,21 @@ public class UserView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNextActionPerformed
 
     private void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
+        list.clear();
         try {
             // TODO add your handling code here:
             h.getData();
             lh.compareTo(Integer.parseInt( txtfldLotnumber.getText()));
+            ListHouse house = h.find();
+            
+            txtfldLotnumber.setText(String.valueOf(house.getLotNumber()));
+            txtfldFirstname.setText(house.getFirstName());
+            txtfldLastname.setText(house.getLastName());
+            txtfldPrice.setText(String.valueOf(house.getPrice()));
+            txtfldSquarefeet.setText(String.valueOf(house.getSquareFeet()));
+            txtfldNumberofbedrooms.setText(String.valueOf(house.getBedRooms()));
+            
+            
         } catch (IOException ex) {
             Logger.getLogger(UserView.class.getName()).log(Level.SEVERE, null, ex);
         }
