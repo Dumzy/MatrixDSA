@@ -202,7 +202,7 @@ public class UserView extends javax.swing.JFrame {
         int position = lh.compareTo(Integer.parseInt(txtfldLotnumber.getText()));
         
         if(position != -1){
-           
+            h.delete(position);
             int i =0;
             
              while(i < list.size() ) {
