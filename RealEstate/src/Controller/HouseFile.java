@@ -60,9 +60,10 @@ public class HouseFile {
         
     }
     
-    public void delete(){
+    public void delete(int position){
 
     }
+    
     
     public ListHouse find(int position){
         
