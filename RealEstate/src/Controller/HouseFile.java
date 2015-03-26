@@ -82,6 +82,8 @@ public class HouseFile {
     public ListHouse nextHouse(){
         int i = realestate.RealEstate.n;
         i = i + 0;
+        
+        int lotNumber = Integer.parseInt((String)RealEstate.list.get(i+0));
         return null;
         
     }
