@@ -80,6 +80,7 @@ public class HouseFile {
     }
     
     public ListHouse nextHouse(){
+        int i = realestate.RealEstate.n;
         return null;
         
     }
