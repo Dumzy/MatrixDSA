@@ -216,7 +216,7 @@ public class UserView extends javax.swing.JFrame {
                     Logger.getLogger(UserView.class.getName()).log(Level.SEVERE, null, ex);
                 }
                         i = i+6;            
-                    }
+                  }
             
         }
         
