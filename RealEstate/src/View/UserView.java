@@ -167,7 +167,11 @@ public class UserView extends javax.swing.JFrame {
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
       try{
-          h.getData();// TODO add your handling code here:
+          h.getData();
+          
+             if(list.size() != 0){
+                 
+             }
     }//GEN-LAST:event_btnNextActionPerformed
 
     private void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
