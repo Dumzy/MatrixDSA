@@ -89,6 +89,8 @@ public class HouseFile {
         double price = Double.parseDouble((String)UserView.list.get(i+3));
         double squareFeet = Double.parseDouble((String)UserView.list.get(i+4));
         int bedRooms = Integer.parseInt((String)UserView.list.get(i+5));
+        
+        ListHouse house = new ListHouse();
         return null;
         
     }
