@@ -173,6 +173,7 @@ public class UserView extends javax.swing.JFrame {
                  ListHouse house = h.nextHouse();
                  
                  txtfldLotnumber.setText(String.valueOf(house.getLotNumber()));
+                 txtfldFirstname.setText(house.getFirstName());
                  
              }
     }//GEN-LAST:event_btnNextActionPerformed
