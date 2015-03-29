@@ -88,7 +88,7 @@ public class HouseFile {
         String lastName = (String) UserView.list.get (i+2);
         double price = Double.parseDouble((String)UserView.list.get(i+3));
         double squareFeet = Double.parseDouble((String)UserView.list.get(i+4));
-        int bedrooms = Integer.parseInt((String)UserView.list.get(i+5));
+        int bedRooms = Integer.parseInt((String)UserView.list.get(i+5));
         return null;
         
     }
