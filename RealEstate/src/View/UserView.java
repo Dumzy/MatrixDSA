@@ -170,7 +170,7 @@ public class UserView extends javax.swing.JFrame {
           h.getData();
           
              if(list.size() != 0){
-                 
+                 ListHouse house = h.nextHouse();
              }
     }//GEN-LAST:event_btnNextActionPerformed
 
