@@ -166,7 +166,32 @@ public class UserView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
-        // TODO add your handling code here:
+      try{
+          h.getData();
+          
+             if(list.size() != 0){
+                 ListHouse house = h.nextHouse();
+                 
+                 txtfldLotnumber.setText(String.valueOf(house.getLotNumber()));
+                 txtfldFirstname.setText(house.getFirstName());
+                 txtfldLastname.setText(house.getLastName());
+                 txtfldPrice.setText(String.valueOf(house.getPrice()));
+                 txtfldSquarefeet.setText(String.valueOf(house.getSquareFeet()));
+                 txtfldNumberofbedrooms.setText(String.valueOf(house.getBedRooms()));
+             }
+          }
+      catch(IndexOutOfBoundsException ex) {
+          JOptionPane.showMessageDialog(null,"Error");
+          jLabel1.setText("Please Enter Data To The File");
+      }
+      catch(FileNotFoundException ex){
+          JOptionPane.showMessageDialog(null,"File not found");
+          jLabel1.setText("Please Enter Data To The File");
+      }
+      catch(IOException ex) {
+          JOptionPane.showMessageDialog(null,"Please add data");
+          
+      }
     }//GEN-LAST:event_btnNextActionPerformed
 
     private void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
@@ -183,6 +208,7 @@ public class UserView extends javax.swing.JFrame {
             txtfldPrice.setText(String.valueOf(house.getPrice()));
             txtfldSquarefeet.setText(String.valueOf(house.getSquareFeet()));
             txtfldNumberofbedrooms.setText(String.valueOf(house.getBedRooms()));
+           
             
             
         } catch (IOException ex) {
