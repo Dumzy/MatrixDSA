@@ -177,7 +177,12 @@ public class UserView extends javax.swing.JFrame {
                  txtfldLastname.setText(house.getLastName());
                  txtfldPrice.setText(String.valueOf(house.getPrice()));
                  txtfldSquarefeet.setText(String.valueOf(house.getSquareFeet()));
+                 txtfldNumberofbedrooms.setText(String.valueOf(house.getBedRooms()));
              }
+          }
+      catch(IndexOutOfBoundException ex) {
+          
+      }
     }//GEN-LAST:event_btnNextActionPerformed
 
     private void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
@@ -194,6 +199,7 @@ public class UserView extends javax.swing.JFrame {
             txtfldPrice.setText(String.valueOf(house.getPrice()));
             txtfldSquarefeet.setText(String.valueOf(house.getSquareFeet()));
             txtfldNumberofbedrooms.setText(String.valueOf(house.getBedRooms()));
+           
             
             
         } catch (IOException ex) {
