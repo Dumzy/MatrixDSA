@@ -90,6 +90,8 @@ public class HouseFile {
         double squareFeet = Double.parseDouble((String)UserView.list.get(i+4));
         int bedRooms = Integer.parseInt((String)UserView.list.get(i+5));
         
+        realestate.RealEstate.n = realestate.RealEstate.n + 6;
+        
         ListHouse house = new ListHouse(lotNumber,firstName,lastName,price,squareFeet,bedRooms);
         
         return house;
