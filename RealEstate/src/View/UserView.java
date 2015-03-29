@@ -184,7 +184,9 @@ public class UserView extends javax.swing.JFrame {
           JOptionPane.showMessageDialog(null,"Error");
           jLabel1.setText("Please Enter Data To The File");
       }
-      
+      catch (FileNotFoundException ex){
+          
+      }
     }//GEN-LAST:event_btnNextActionPerformed
 
     private void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
