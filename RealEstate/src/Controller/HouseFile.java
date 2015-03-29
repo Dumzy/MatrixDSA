@@ -90,7 +90,7 @@ public class HouseFile {
         double squareFeet = Double.parseDouble((String)UserView.list.get(i+4));
         int bedRooms = Integer.parseInt((String)UserView.list.get(i+5));
         
-        ListHouse house = new ListHouse(lotNumber,firstName,lastname,price,squarefeet,bedrooms);
+        ListHouse house = new ListHouse(lotNumber,firstName,lastName,price,squarefeet,bedrooms);
         return null;
         
     }
