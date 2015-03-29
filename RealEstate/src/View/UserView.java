@@ -180,9 +180,11 @@ public class UserView extends javax.swing.JFrame {
                  txtfldNumberofbedrooms.setText(String.valueOf(house.getBedRooms()));
              }
           }
-      catch(IndexOutOfBoundException ex) {
+      catch(IndexOutOfBoundsException ex) {
           JOptionPane.showMessageDialog(null,"Error");
+          jLabel1.setText("Please Enter Data To The File");
       }
+      
     }//GEN-LAST:event_btnNextActionPerformed
 
     private void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
