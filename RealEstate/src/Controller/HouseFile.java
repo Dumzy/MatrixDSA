@@ -91,7 +91,8 @@ public class HouseFile {
         int bedRooms = Integer.parseInt((String)UserView.list.get(i+5));
         
         ListHouse house = new ListHouse(lotNumber,firstName,lastName,price,squareFeet,bedRooms);
-        return null;
+        
+        return house;
         
     }
 
