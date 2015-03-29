@@ -194,35 +194,45 @@ public class UserView extends javax.swing.JFrame {
        
         list.clear();
         
-        try {
-            h.getData();
-        } catch (IOException ex) {
-            Logger.getLogger(UserView.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        int position = lh.compareTo(Integer.parseInt(txtfldLotnumber.getText()));
+        if(txtfldLotnumber.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Please Enter The Lot Number");
+        }        
+                
+        else{
+            try {
+               h.getData();
+               int position = lh.compareTo(Integer.parseInt(txtfldLotnumber.getText()));
         
-        if(position != -1){
-            h.delete(position);
-            int i =0;
+                if(position != -1){
+                   h.delete(position);
+                   int i =0;
             
-             while(i < list.size() ) {
+                   while(i < list.size() ) {
                         ListHouse newHouse = new ListHouse(Integer.parseInt(list.get(i).toString()),list.get(i+1).toString(),list.get(i+2).toString(), 
                                             Double.parseDouble(list.get(i+3).toString()), Double.parseDouble(list.get(i+4).toString()), 
                                             Integer.parseInt(list.get(i+5).toString()));                
-                    
-                try {                    
-                    h.addData(newHouse);
-                } catch (IOException ex) {
-                    Logger.getLogger(UserView.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                        i = i+6;            
+                      
+                         h.addData(newHouse);
+                         i = i+6;            
+                      }
                     }
-            
-        }
         
-        else{
+                 else{
                     JOptionPane.showMessageDialog(null, "Error");
-                }       
+                  }
+        } catch (IOException ex) {
+           JOptionPane.showMessageDialog(null, "File Not Found");
+            jLabel1.setText("Please Enter Data To The File");
+        }
+            
+            txtfldFirstname.setText(null);
+            txtfldLastname.setText(null);
+            txtfldLotnumber.setText(null);
+            txtfldNumberofbedrooms.setText(null);
+            txtfldPrice.setText(null);
+            txtfldSquarefeet.setText(null);
+            list.clear();
+        }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     /**
