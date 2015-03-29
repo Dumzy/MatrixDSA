@@ -189,6 +189,9 @@ public class UserView extends javax.swing.JFrame {
           jLabel1.setText("Please Enter Data To The File");
       }
       catch(IOException ex) {
+          JOptionPane.showMessageDialog(null,"Please add data");
+          
+      }
     }//GEN-LAST:event_btnNextActionPerformed
 
     private void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
