@@ -175,6 +175,8 @@ public class UserView extends javax.swing.JFrame {
                  txtfldLotnumber.setText(String.valueOf(house.getLotNumber()));
                  txtfldFirstname.setText(house.getFirstName());
                  txtfldLastname.setText(house.getLastName());
+                 txtfldPrice.setText(String.valueOf(house.getPrice()));
+                 
              }
     }//GEN-LAST:event_btnNextActionPerformed
 
