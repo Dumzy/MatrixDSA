@@ -181,7 +181,7 @@ public class UserView extends javax.swing.JFrame {
              }
           }
       catch(IndexOutOfBoundException ex) {
-          
+          JOptionPane.showMessageDialog(null,"Error");
       }
     }//GEN-LAST:event_btnNextActionPerformed
 
