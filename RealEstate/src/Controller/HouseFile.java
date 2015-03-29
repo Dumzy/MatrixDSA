@@ -84,6 +84,7 @@ public class HouseFile {
         i = i + 0;
         
         int lotNumber = Integer.parseInt((String)UserView.list.get(i+0));
+        String firstName = (String)UserView.list.get (i+1);
         return null;
         
     }
