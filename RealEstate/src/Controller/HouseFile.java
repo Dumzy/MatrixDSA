@@ -9,6 +9,7 @@ package Controller;
 import View.UserView;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -22,6 +23,7 @@ import realestate.RealEstate;
 public class HouseFile {
     
     private String fileName = "HouseFile.txt";
+    File f = new File(fileName);
     
     public void addData(ListHouse house) throws IOException{
         
@@ -69,6 +71,11 @@ public class HouseFile {
         UserView.list.remove(position);
         UserView.list.remove(position);
         UserView.list.remove(position);
+        UserView.list.remove(position);
+        UserView.list.remove(position);
+        UserView.list.remove(position);
+        
+        f.delete();
         
 
     }
