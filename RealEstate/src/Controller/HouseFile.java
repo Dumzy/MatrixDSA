@@ -13,6 +13,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import realestate.RealEstate;
 
 /**
  *
@@ -61,6 +62,11 @@ public class HouseFile {
     }
     
     public void delete(int position){
+        
+        UserView.list.remove(position);
+        UserView.list.remove(position);
+        UserView.list.remove(position);
+        
 
     }
     
