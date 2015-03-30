@@ -71,6 +71,11 @@ public class HouseFile {
         UserView.list.remove(position);
         UserView.list.remove(position);
         UserView.list.remove(position);
+        UserView.list.remove(position);
+        UserView.list.remove(position);
+        UserView.list.remove(position);
+        
+        f.delete();
         
 
     }
