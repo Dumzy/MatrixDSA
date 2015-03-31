@@ -12,6 +12,7 @@ import Controller.SortedList;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -21,6 +22,7 @@ public class UserView extends javax.swing.JFrame {
 
     public static SortedList list = new SortedList();
     HouseFile h = new HouseFile();
+    ListHouse lh = new ListHouse();
     
     public UserView() {
         initComponents();
@@ -114,12 +116,27 @@ public class UserView extends javax.swing.JFrame {
         jPanel1.add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 170, 40));
 
         btnFind.setText("Find");
+        btnFind.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFindActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnFind, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, 170, 40));
 
         btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, 170, 40));
 
         btnNext.setText("Next");
+        btnNext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNextActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnNext, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, 170, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 500));
@@ -147,6 +164,102 @@ public class UserView extends javax.swing.JFrame {
             Logger.getLogger(UserView.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnAddActionPerformed
+
+    private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
+      try{
+          h.getData();
+          
+             if(list.size() != 0){
+                 ListHouse house = h.nextHouse();
+                 
+                 txtfldLotnumber.setText(String.valueOf(house.getLotNumber()));
+                 txtfldFirstname.setText(house.getFirstName());
+                 txtfldLastname.setText(house.getLastName());
+                 txtfldPrice.setText(String.valueOf(house.getPrice()));
+                 txtfldSquarefeet.setText(String.valueOf(house.getSquareFeet()));
+                 txtfldNumberofbedrooms.setText(String.valueOf(house.getBedRooms()));
+             }
+          }
+      catch(IndexOutOfBoundsException ex) {
+          JOptionPane.showMessageDialog(null,"Error");
+          jLabel1.setText("Please Enter Data To The File");
+      }
+      catch(FileNotFoundException ex){
+          JOptionPane.showMessageDialog(null,"File not found");
+          jLabel1.setText("Please Enter Data To The File");
+      }
+      catch(IOException ex) {
+          JOptionPane.showMessageDialog(null,"Please add data");
+          
+      }
+    }//GEN-LAST:event_btnNextActionPerformed
+
+    private void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
+        list.clear();
+        try {
+            // TODO add your handling code here:
+            h.getData();
+            int position = lh.compareTo(Integer.parseInt(txtfldLotnumber.getText()));
+            ListHouse house = h.find(position);
+            
+            txtfldLotnumber.setText(String.valueOf(house.getLotNumber()));
+            txtfldFirstname.setText(house.getFirstName());
+            txtfldLastname.setText(house.getLastName());
+            txtfldPrice.setText(String.valueOf(house.getPrice()));
+            txtfldSquarefeet.setText(String.valueOf(house.getSquareFeet()));
+            txtfldNumberofbedrooms.setText(String.valueOf(house.getBedRooms()));
+           
+            
+            
+        } catch (IOException ex) {
+            Logger.getLogger(UserView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnFindActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+       
+        list.clear();
+        
+        if(txtfldLotnumber.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Please Enter The Lot Number");
+        }        
+                
+        else{
+            try {
+               h.getData();
+               int position = lh.compareTo(Integer.parseInt(txtfldLotnumber.getText()));
+        
+                if(position != -1){
+                   h.delete(position);
+                   int i =0;
+            
+                   while(i < list.size() ) {
+                        ListHouse newHouse = new ListHouse(Integer.parseInt(list.get(i).toString()),list.get(i+1).toString(),list.get(i+2).toString(), 
+                                            Double.parseDouble(list.get(i+3).toString()), Double.parseDouble(list.get(i+4).toString()), 
+                                            Integer.parseInt(list.get(i+5).toString()));                
+                      
+                         h.addData(newHouse);
+                         i = i+6;            
+                      }
+                    }
+        
+                 else{
+                    JOptionPane.showMessageDialog(null, "Error");
+                  }
+        } catch (IOException ex) {
+           JOptionPane.showMessageDialog(null, "File Not Found");
+            jLabel1.setText("Please Enter Data To The File");
+        }
+            
+            txtfldFirstname.setText(null);
+            txtfldLastname.setText(null);
+            txtfldLotnumber.setText(null);
+            txtfldNumberofbedrooms.setText(null);
+            txtfldPrice.setText(null);
+            txtfldSquarefeet.setText(null);
+            list.clear();
+        }
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
     /**
      * @param args the command line arguments

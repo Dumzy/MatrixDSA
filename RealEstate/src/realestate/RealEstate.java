@@ -11,6 +11,8 @@ package realestate;
  * @author Milton
  */
 public class RealEstate {
+    public static int n = 0;
+    
 
     /**
      * @param args the command line arguments
