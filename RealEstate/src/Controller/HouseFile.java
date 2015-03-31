@@ -80,22 +80,7 @@ public class HouseFile {
         
     }
     
-    public void delete(int position){
-        
-        UserView.list.remove(position);
-        UserView.list.remove(position);
-        UserView.list.remove(position);
-        UserView.list.remove(position);
-        UserView.list.remove(position);
-        UserView.list.remove(position);
-        UserView.list.remove(position);
-        UserView.list.remove(position);
-        UserView.list.remove(position);
-        
-        f.delete();
-        
 
-    }
     
     
     public ListHouse find(int position){
