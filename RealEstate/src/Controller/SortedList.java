@@ -7,11 +7,12 @@
 package Controller;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author Milton
  */
 public class SortedList {
-    
+    public static List list1 = new ArrayList(); 
 }
