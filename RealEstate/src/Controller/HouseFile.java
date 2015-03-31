@@ -9,10 +9,12 @@ package Controller;
 import View.UserView;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import realestate.RealEstate;
 
 /**
  *
@@ -21,6 +23,7 @@ import java.io.IOException;
 public class HouseFile {
     
     private String fileName = "HouseFile.txt";
+    File f = new File(fileName);
     
     public void addData(ListHouse house) throws IOException{
         
@@ -60,9 +63,23 @@ public class HouseFile {
         
     }
     
-    public void delete(){
+    public void delete(int position){
+        
+        UserView.list.remove(position);
+        UserView.list.remove(position);
+        UserView.list.remove(position);
+        UserView.list.remove(position);
+        UserView.list.remove(position);
+        UserView.list.remove(position);
+        UserView.list.remove(position);
+        UserView.list.remove(position);
+        UserView.list.remove(position);
+        
+        f.delete();
+        
 
     }
+    
     
     public ListHouse find(int position){
         
@@ -79,7 +96,21 @@ public class HouseFile {
     }
     
     public ListHouse nextHouse(){
-        return null;
+        int i = realestate.RealEstate.n;
+        i = i + 0;
+        
+        int lotNumber = Integer.parseInt((String)UserView.list.get(i+0));
+        String firstName = (String)UserView.list.get (i+1);
+        String lastName = (String) UserView.list.get (i+2);
+        double price = Double.parseDouble((String)UserView.list.get(i+3));
+        double squareFeet = Double.parseDouble((String)UserView.list.get(i+4));
+        int bedRooms = Integer.parseInt((String)UserView.list.get(i+5));
+        
+        realestate.RealEstate.n = realestate.RealEstate.n + 6;
+        
+        ListHouse house = new ListHouse(lotNumber,firstName,lastName,price,squareFeet,bedRooms);
+        
+        return house;
         
     }
 
