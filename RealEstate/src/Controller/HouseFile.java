@@ -15,6 +15,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Collections;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -129,5 +131,20 @@ public class HouseFile {
         
     }
 
+    public void isThere(){
+        if(!this.f.exists()){
+            try {
+                f.createNewFile();
+                System.out.println("created");
+            } catch (IOException ex) {
+                Logger.getLogger(HouseFile.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else
+            System.out.println("File Already Created");
+    }
     
+    public void deleteFile(){
+        this.f.delete();
+    }
 }
