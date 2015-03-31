@@ -12,6 +12,6 @@ import java.util.ArrayList;
  *
  * @author Milton
  */
-public class SortedList extends ArrayList{
+public class SortedList {
     
 }
