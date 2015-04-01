@@ -30,25 +30,6 @@ public class ListHouse implements Listable{
         this.bedRooms = bedRooms;
     }
     
-    public int compareTo(int lotNumber){
-        int position = 0;
-        int i = 0;
-        
-        while(i < UserView.list.size()){
-            if((UserView.list.get(i).toString().compareToIgnoreCase(String.valueOf(lotNumber))) == 0){
-                
-                position = i;
-                break;
-                
-            }
-            else{
-                i=i+6;
-                position = -1;
-            }
-        }
-        return position;
-    }
-    
     public ListHouse(){
     
     }
@@ -76,14 +57,10 @@ public class ListHouse implements Listable{
     public int getBedRooms() {
         return bedRooms;
     }
-    
-    
-    
-    @Override
-    public void copy() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
-    
-    
+    @Override
+    public int compareTo(Object o) {
+        ListHouse other = (ListHouse)o;
+        return (this.lotNumber-other.lotNumber); 
+    }
 }

@@ -14,7 +14,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import realestate.RealEstate;
+import java.util.Collections;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -48,14 +50,29 @@ public class HouseFile {
     public void getData() throws FileNotFoundException, IOException{
         
         String line = null;        
+        int lotNumber = 0;
+        String firstName = null;
+        String lastName = null;
+        double price = 0;
+        double squareFeet = 0;
+        int bedRooms = 0;     
         
-        FileReader fileReader = new FileReader("HouseFile.txt");
+        FileReader fileReader = new FileReader(fileName);
         BufferedReader read =new BufferedReader(fileReader);
             
         while((line = read.readLine()) != null) {
-            UserView.list.add(line);
+            
+            lotNumber = Integer.parseInt(line);            
+            firstName = read.readLine();
+            lastName =  read.readLine();
+            price =  Double.parseDouble(read.readLine());
+            squareFeet = Double.parseDouble(read.readLine());
+            bedRooms = Integer.parseInt(read.readLine());   
+            ListHouse house = new ListHouse(lotNumber, firstName, lastName, price, squareFeet, bedRooms);
+            SortedList.list1.add(house);            
         }
-        read.close();        
+        read.close();
+        Collections.sort(SortedList.list1);       
         
     }
     
@@ -63,22 +80,7 @@ public class HouseFile {
         
     }
     
-    public void delete(int position){
-        
-        UserView.list.remove(position);
-        UserView.list.remove(position);
-        UserView.list.remove(position);
-        UserView.list.remove(position);
-        UserView.list.remove(position);
-        UserView.list.remove(position);
-        UserView.list.remove(position);
-        UserView.list.remove(position);
-        UserView.list.remove(position);
-        
-        f.delete();
-        
 
-    }
     
     
     public ListHouse find(int position){
@@ -114,5 +116,20 @@ public class HouseFile {
         
     }
 
+    public void isThere(){
+        if(!this.f.exists()){
+            try {
+                f.createNewFile();
+                System.out.println("created");
+            } catch (IOException ex) {
+                Logger.getLogger(HouseFile.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else
+            System.out.println("File Already Created");
+    }
     
+    public void deleteFile(){
+        this.f.delete();
+    }
 }
