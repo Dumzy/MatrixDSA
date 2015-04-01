@@ -11,6 +11,7 @@ import Controller.ListHouse;
 import Controller.SortedList;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -253,48 +254,13 @@ public class UserView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnFindActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-       
-        list.clear();
+   
+        SortedList.list1.clear();
         
-        if(txtfldLotnumber.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null, "Please Enter The Lot Number");
-        }        
-                
-        else{
-            try {
-               h.getData();
-               int position = lh.compareTo(Integer.parseInt(txtfldLotnumber.getText()));
-        
-                if(position != -1){
-                   h.delete(position);
-                   int i =0;
-            
-                   while(i < list.size() ) {
-                        ListHouse newHouse = new ListHouse(Integer.parseInt(list.get(i).toString()),list.get(i+1).toString(),list.get(i+2).toString(), 
-                                            Double.parseDouble(list.get(i+3).toString()), Double.parseDouble(list.get(i+4).toString()), 
-                                            Integer.parseInt(list.get(i+5).toString()));                
-                      
-                         h.addData(newHouse);
-                         i = i+6;            
-                      }
-                    }
-        
-                 else{
-                    JOptionPane.showMessageDialog(null, "Error");
-                  }
-        } catch (IOException ex) {
-           JOptionPane.showMessageDialog(null, "File Not Found");
-            jLabel1.setText("Please Enter Data To The File");
-        }
-            
-            txtfldFirstname.setText(null);
-            txtfldLastname.setText(null);
-            txtfldLotnumber.setText(null);
-            txtfldNumberofbedrooms.setText(null);
-            txtfldPrice.setText(null);
-            txtfldSquarefeet.setText(null);
-            list.clear();
-        }
+            h.getData();
+            List newList = s.delete(Integer.parseInt(txtfldLotnumber.getText()));
+            h.deleteFile();
+    
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
