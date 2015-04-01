@@ -237,7 +237,7 @@ public class UserView extends javax.swing.JFrame {
             // TODO add your handling code here:
             h.getData();
 //            int position = lh.compareTo(Integer.parseInt(txtfldLotnumber.getText()));
-            ListHouse house = h.find(position);
+            ListHouse house = s.find(Integer.parseInt(txtfldLotnumber.getText()));
             
             txtfldLotnumber.setText(String.valueOf(house.getLotNumber()));
             txtfldFirstname.setText(house.getFirstName());
@@ -248,9 +248,15 @@ public class UserView extends javax.swing.JFrame {
            
             
             
+        } catch (NullPointerException ex) {
+            System.out.println("fsdfsdfs");
+        } catch (FileNotFoundException ex) {
+            jLabel1.setText("Please Enter Data find");
         } catch (IOException ex) {
             Logger.getLogger(UserView.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } catch (IndexOutOfBoundsException ex) {
+            jLabel1.setText("Please Enter Data find");
+        } 
     }//GEN-LAST:event_btnFindActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
