@@ -47,5 +47,22 @@ public class SortedList {
         h.deleteFile();
         return list1;
       }
+      
+      public ListHouse find(int lotNumber){
+          
+          for (int i = 0; i < list1.size(); i++){
+              
+              ListHouse house = ((ListHouse)list1.get(i));
+              if(house.getLotNumber() == lotNumber){
+                    this.house = house;
+                    break; 
+              }
+              else{
+                    this.house = null;
+              }
+          }
+        return house;
+              
+      }
     
 }
