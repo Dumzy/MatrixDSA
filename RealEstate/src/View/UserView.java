@@ -25,6 +25,7 @@ public class UserView extends javax.swing.JFrame {
     SortedList s = new SortedList();
     HouseFile h = new HouseFile();
     ListHouse lh = new ListHouse();
+    ListHouse house;
     
     public UserView() {
         initComponents();
@@ -262,10 +263,29 @@ public class UserView extends javax.swing.JFrame {
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
    
         SortedList.list1.clear();
-        
+         try {
             h.getData();
             List newList = s.delete(Integer.parseInt(txtfldLotnumber.getText()));
             h.deleteFile();
+            
+              for (int j = 0; j < newList.size(); j++) {
+                house = new ListHouse(((ListHouse) newList.get(j)).getLotNumber(), 
+                            ((ListHouse) newList.get(j)).getFirstName(), 
+                            ((ListHouse) newList.get(j)).getLastName(), 
+                            ((ListHouse) newList.get(j)).getPrice(), 
+                            ((ListHouse) newList.get(j)).getSquareFeet(), 
+                            ((ListHouse) newList.get(j)).getBedRooms());
+                h.addData(house);
+            }
+              } catch (FileNotFoundException ex) {
+            jLabel1.setText("Please Enter Data delete");
+        } catch (IOException ex) {
+            Logger.getLogger(UserView.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IndexOutOfBoundsException ex) {
+            jLabel1.setText("Please Enter Data delete");
+        } catch (NumberFormatException ex) {
+            jLabel1.setText("Please Enter Data Lot Number");
+        }
     
     }//GEN-LAST:event_btnDeleteActionPerformed
 
