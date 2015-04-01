@@ -231,11 +231,11 @@ public class UserView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNextActionPerformed
 
     private void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
-        list.clear();
+//        list.clear();
         try {
             // TODO add your handling code here:
             h.getData();
-            int position = lh.compareTo(Integer.parseInt(txtfldLotnumber.getText()));
+//            int position = lh.compareTo(Integer.parseInt(txtfldLotnumber.getText()));
             ListHouse house = h.find(position);
             
             txtfldLotnumber.setText(String.valueOf(house.getLotNumber()));
