@@ -83,19 +83,19 @@ public class HouseFile {
 
     
     
-    public ListHouse find(int position){
-        
-        int lotNumber = Integer.parseInt((String) UserView.list.get(position + 0));
-        String firstname = (String) UserView.list.get(position + 1);
-        String lastname = (String) UserView.list.get(position + 2);
-        double price = Double.parseDouble((String) UserView.list.get(position + 3));
-        double squarefeet = Double.parseDouble((String) UserView.list.get(position + 4));
-        int bedrooms = Integer.parseInt((String) UserView.list.get(position + 5));
-            
-        ListHouse house = new ListHouse(lotNumber,firstname,lastname,price,squarefeet,bedrooms);
-        return house;
-    
-    }
+//    public ListHouse find(int position){
+//        
+//        int lotNumber = Integer.parseInt((String) UserView.list.get(position + 0));
+//        String firstname = (String) UserView.list.get(position + 1);
+//        String lastname = (String) UserView.list.get(position + 2);
+//        double price = Double.parseDouble((String) UserView.list.get(position + 3));
+//        double squarefeet = Double.parseDouble((String) UserView.list.get(position + 4));
+//        int bedrooms = Integer.parseInt((String) UserView.list.get(position + 5));
+//            
+//        ListHouse house = new ListHouse(lotNumber,firstname,lastname,price,squarefeet,bedrooms);
+//        return house;
+//    
+//    }
     
 //    public ListHouse nextHouse(){
 //        int i = realestate.RealEstate.n;
