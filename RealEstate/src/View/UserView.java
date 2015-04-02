@@ -219,8 +219,8 @@ public class UserView extends javax.swing.JFrame {
                  txtfldNumberofbedrooms.setText(String.valueOf(house.getBedRooms()));
              
           }
-      catch(IndexOutOfBoundsException ex) {
-          JOptionPane.showMessageDialog(null,"Error");
+      catch(NullPointerException ex) {
+          JOptionPane.showMessageDialog(null,"");
           jLabel1.setText("Please Enter Data To The File");
       }
       catch(FileNotFoundException ex){
