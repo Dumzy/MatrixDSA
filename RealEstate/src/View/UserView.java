@@ -221,7 +221,7 @@ public class UserView extends javax.swing.JFrame {
              
           }
       catch(NullPointerException ex) {
-          JOptionPane.showMessageDialog(null,"");
+          JOptionPane.showMessageDialog(null,"Error");
          
       }
       catch(FileNotFoundException ex){
