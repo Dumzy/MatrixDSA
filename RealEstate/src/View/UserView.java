@@ -9,7 +9,9 @@ package View;
 import Controller.HouseFile;
 import Controller.ListHouse;
 import Controller.SortedList;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -20,9 +22,10 @@ import javax.swing.JOptionPane;
  */
 public class UserView extends javax.swing.JFrame {
 
-    public static SortedList list = new SortedList();
+    SortedList s = new SortedList();
     HouseFile h = new HouseFile();
     ListHouse lh = new ListHouse();
+    ListHouse house;
     
     public UserView() {
         initComponents();
@@ -113,6 +116,11 @@ public class UserView extends javax.swing.JFrame {
         jPanel1.add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 170, 40));
 
         btnClear.setText("Clear");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 170, 40));
 
         btnFind.setText("Find");
@@ -149,19 +157,49 @@ public class UserView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnResetActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+
+        SortedList.list1.clear();
         
-        int lotNumber = Integer.parseInt(txtfldLotnumber.getText());
-        String firstName = txtfldFirstname.getText();
-        String lastName = txtfldLastname.getText();
-        double price = Double.parseDouble(txtfldPrice.getText());
-        double squareFeet = Double.parseDouble(txtfldSquarefeet.getText());
-        int bedRooms = Integer.parseInt(txtfldNumberofbedrooms.getText());
+        if(txtfldLotnumber.getText().isEmpty() || txtfldFirstname.getText().isEmpty() || txtfldLastname.getText().isEmpty() || txtfldPrice.getText().isEmpty() || txtfldSquarefeet.getText().isEmpty() || txtfldNumberofbedrooms.getText().isEmpty()){
+            jLabel1.setText("Please Enter All Details");
+        }
         
-        ListHouse house = new ListHouse(lotNumber, firstName, lastName, price, squareFeet, bedRooms);
-        try {
-            h.addData(house);
-        } catch (IOException ex) {
-            Logger.getLogger(UserView.class.getName()).log(Level.SEVERE, null, ex);
+        else{
+            try {             
+                    h.isThere();
+                    h.getData();                
+                    if(s.checkHouse(Integer.parseInt(txtfldLotnumber.getText()))){
+                        jLabel1.setText("Lot Number Already In Use");
+                    }
+                    else{        
+                        int lotNumber = Integer.parseInt(txtfldLotnumber.getText());
+                        String firstName = txtfldFirstname.getText();
+                        String lastName = txtfldLastname.getText();
+                        double price = Double.parseDouble(txtfldPrice.getText());
+                        double squareFeet = Double.parseDouble(txtfldSquarefeet.getText());
+                        int bedRooms = Integer.parseInt(txtfldNumberofbedrooms.getText()); 
+
+                        ListHouse house = new ListHouse(lotNumber, firstName, lastName, price, squareFeet, bedRooms);                               
+                        h.addData(house);         
+                        
+                        txtfldLotnumber.setText(null);
+                        txtfldFirstname.setText(null);
+                        txtfldLastname.setText(null);
+                        txtfldPrice.setText(null);
+                        txtfldSquarefeet.setText(null);
+                        txtfldNumberofbedrooms.setText(null);
+                        
+                        jLabel1.setText("Success");
+                    }
+            } catch (FileNotFoundException ex) {
+                jLabel1.setText("Please Enter Data");
+            } catch (IOException ex) {
+                jLabel1.setText("Error");
+            } catch (IndexOutOfBoundsException ex) {
+                jLabel1.setText("Please Enter Data Add");
+            } catch (NumberFormatException ex) {
+                jLabel1.setText("Please Check Your Details");
+            }
         }
     }//GEN-LAST:event_btnAddActionPerformed
 
@@ -194,12 +232,12 @@ public class UserView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNextActionPerformed
 
     private void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
-        list.clear();
+//        list.clear();
         try {
             // TODO add your handling code here:
             h.getData();
-            int position = lh.compareTo(Integer.parseInt(txtfldLotnumber.getText()));
-            ListHouse house = h.find(position);
+//            int position = lh.compareTo(Integer.parseInt(txtfldLotnumber.getText()));
+            ListHouse house = s.find(Integer.parseInt(txtfldLotnumber.getText()));
             
             txtfldLotnumber.setText(String.valueOf(house.getLotNumber()));
             txtfldFirstname.setText(house.getFirstName());
@@ -210,55 +248,55 @@ public class UserView extends javax.swing.JFrame {
            
             
             
+        } catch (NullPointerException ex) {
+            System.out.println("fsdfsdfs");
+        } catch (FileNotFoundException ex) {
+            jLabel1.setText("Please Enter Data find");
         } catch (IOException ex) {
             Logger.getLogger(UserView.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } catch (IndexOutOfBoundsException ex) {
+            jLabel1.setText("Please Enter Data find");
+        } 
     }//GEN-LAST:event_btnFindActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-       
-        list.clear();
-        
-        if(txtfldLotnumber.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null, "Please Enter The Lot Number");
-        }        
-                
-        else{
-            try {
-               h.getData();
-               int position = lh.compareTo(Integer.parseInt(txtfldLotnumber.getText()));
-        
-                if(position != -1){
-                   h.delete(position);
-                   int i =0;
+   
+        SortedList.list1.clear();
+         try {
+            h.getData();
+            List newList = s.delete(Integer.parseInt(txtfldLotnumber.getText()));
+            h.deleteFile();
             
-                   while(i < list.size() ) {
-                        ListHouse newHouse = new ListHouse(Integer.parseInt(list.get(i).toString()),list.get(i+1).toString(),list.get(i+2).toString(), 
-                                            Double.parseDouble(list.get(i+3).toString()), Double.parseDouble(list.get(i+4).toString()), 
-                                            Integer.parseInt(list.get(i+5).toString()));                
-                      
-                         h.addData(newHouse);
-                         i = i+6;            
-                      }
-                    }
-        
-                 else{
-                    JOptionPane.showMessageDialog(null, "Error");
-                  }
+              for (int j = 0; j < newList.size(); j++) {
+                house = new ListHouse(((ListHouse) newList.get(j)).getLotNumber(), 
+                            ((ListHouse) newList.get(j)).getFirstName(), 
+                            ((ListHouse) newList.get(j)).getLastName(), 
+                            ((ListHouse) newList.get(j)).getPrice(), 
+                            ((ListHouse) newList.get(j)).getSquareFeet(), 
+                            ((ListHouse) newList.get(j)).getBedRooms());
+                h.addData(house);
+            }
+              } catch (FileNotFoundException ex) {
+            jLabel1.setText("Please Enter Data delete");
         } catch (IOException ex) {
-           JOptionPane.showMessageDialog(null, "File Not Found");
-            jLabel1.setText("Please Enter Data To The File");
+            Logger.getLogger(UserView.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IndexOutOfBoundsException ex) {
+            jLabel1.setText("Please Enter Data delete");
+        } catch (NumberFormatException ex) {
+            jLabel1.setText("Please Enter Data Lot Number");
         }
-            
-            txtfldFirstname.setText(null);
-            txtfldLastname.setText(null);
-            txtfldLotnumber.setText(null);
-            txtfldNumberofbedrooms.setText(null);
-            txtfldPrice.setText(null);
-            txtfldSquarefeet.setText(null);
-            list.clear();
-        }
+    
     }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+        txtfldLotnumber.setText(null);
+        txtfldFirstname.setText(null);
+        txtfldLastname.setText(null);
+        txtfldPrice.setText(null);
+        txtfldSquarefeet.setText(null);
+        txtfldNumberofbedrooms.setText(null);
+        SortedList.list1.clear();
+    }//GEN-LAST:event_btnClearActionPerformed
 
     /**
      * @param args the command line arguments
