@@ -210,7 +210,7 @@ public class UserView extends javax.swing.JFrame {
           
              
                  ListHouse house = s.nextHouse();
-                 
+                 jLabel1.setText("Next House Displayed");
                  txtfldLotnumber.setText(String.valueOf(house.getLotNumber()));
                  txtfldFirstname.setText(house.getFirstName());
                  txtfldLastname.setText(house.getLastName());
