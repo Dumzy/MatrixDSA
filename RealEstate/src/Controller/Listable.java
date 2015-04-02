@@ -10,7 +10,7 @@ package Controller;
  *
  * @author Milton
  */
-public interface Listable {
-    public void copy();
-    public int compareTo(int lotNumber);    
+public interface Listable extends Comparable<Object>{
+    
+    
 }

@@ -6,6 +6,8 @@
 
 package Controller;
 
+import View.UserView;
+
 /**
  *
  * @author Milton
@@ -26,6 +28,10 @@ public class ListHouse implements Listable{
         this.price = price;
         this.squareFeet = squareFeet;
         this.bedRooms = bedRooms;
+    }
+    
+    public ListHouse(){
+    
     }
 
     public int getLotNumber() {
@@ -51,17 +57,10 @@ public class ListHouse implements Listable{
     public int getBedRooms() {
         return bedRooms;
     }
-    
-    
-    
-    @Override
-    public void copy() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     @Override
-    public int compareTo(int lotNumber) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int compareTo(Object o) {
+        ListHouse other = (ListHouse)o;
+        return (this.lotNumber-other.lotNumber); 
     }
-    
 }
