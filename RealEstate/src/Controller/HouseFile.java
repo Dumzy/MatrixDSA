@@ -83,38 +83,38 @@ public class HouseFile {
 
     
     
-    public ListHouse find(int position){
-        
-        int lotNumber = Integer.parseInt((String) UserView.list.get(position + 0));
-        String firstname = (String) UserView.list.get(position + 1);
-        String lastname = (String) UserView.list.get(position + 2);
-        double price = Double.parseDouble((String) UserView.list.get(position + 3));
-        double squarefeet = Double.parseDouble((String) UserView.list.get(position + 4));
-        int bedrooms = Integer.parseInt((String) UserView.list.get(position + 5));
-            
-        ListHouse house = new ListHouse(lotNumber,firstname,lastname,price,squarefeet,bedrooms);
-        return house;
+//    public ListHouse find(int position){
+//        
+//        int lotNumber = Integer.parseInt((String) UserView.list.get(position + 0));
+//        String firstname = (String) UserView.list.get(position + 1);
+//        String lastname = (String) UserView.list.get(position + 2);
+//        double price = Double.parseDouble((String) UserView.list.get(position + 3));
+//        double squarefeet = Double.parseDouble((String) UserView.list.get(position + 4));
+//        int bedrooms = Integer.parseInt((String) UserView.list.get(position + 5));
+//            
+//        ListHouse house = new ListHouse(lotNumber,firstname,lastname,price,squarefeet,bedrooms);
+//        return house;
+//    
+//    }
     
-    }
-    
-    public ListHouse nextHouse(){
-        int i = realestate.RealEstate.n;
-        i = i + 0;
-        
-        int lotNumber = Integer.parseInt((String)UserView.list.get(i+0));
-        String firstName = (String)UserView.list.get (i+1);
-        String lastName = (String) UserView.list.get (i+2);
-        double price = Double.parseDouble((String)UserView.list.get(i+3));
-        double squareFeet = Double.parseDouble((String)UserView.list.get(i+4));
-        int bedRooms = Integer.parseInt((String)UserView.list.get(i+5));
-        
-        realestate.RealEstate.n = realestate.RealEstate.n + 6;
-        
-        ListHouse house = new ListHouse(lotNumber,firstName,lastName,price,squareFeet,bedRooms);
-        
-        return house;
-        
-    }
+//    public ListHouse nextHouse(){
+//        int i = realestate.RealEstate.n;
+//        i = i + 0;
+//        
+//        int lotNumber = Integer.parseInt((String)UserView.list.get(i+0));
+//        String firstName = (String)UserView.list.get (i+1);
+//        String lastName = (String) UserView.list.get (i+2);
+//        double price = Double.parseDouble((String)UserView.list.get(i+3));
+//        double squareFeet = Double.parseDouble((String)UserView.list.get(i+4));
+//        int bedRooms = Integer.parseInt((String)UserView.list.get(i+5));
+//        
+//        realestate.RealEstate.n = realestate.RealEstate.n + 6;
+//        
+//        ListHouse house = new ListHouse(lotNumber,firstName,lastName,price,squareFeet,bedRooms);
+//        
+//        return house;
+//        
+//    }
 
     public void isThere(){
         if(!this.f.exists()){
