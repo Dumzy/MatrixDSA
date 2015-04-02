@@ -208,8 +208,8 @@ public class UserView extends javax.swing.JFrame {
         try{
           h.getData();
           
-             if(list.size() != 0){
-                 ListHouse house = h.nextHouse();
+             
+                 ListHouse house = s.nextHouse();
                  
                  txtfldLotnumber.setText(String.valueOf(house.getLotNumber()));
                  txtfldFirstname.setText(house.getFirstName());
@@ -217,7 +217,7 @@ public class UserView extends javax.swing.JFrame {
                  txtfldPrice.setText(String.valueOf(house.getPrice()));
                  txtfldSquarefeet.setText(String.valueOf(house.getSquareFeet()));
                  txtfldNumberofbedrooms.setText(String.valueOf(house.getBedRooms()));
-             }
+             
           }
       catch(IndexOutOfBoundsException ex) {
           JOptionPane.showMessageDialog(null,"Error");
