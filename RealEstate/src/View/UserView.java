@@ -154,8 +154,20 @@ public class UserView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
-        // TODO add your handling code here:
-        ListHouse house = s.reSet(); 
+        try {
+            // TODO add your handling code here:
+            h.getData();
+            ListHouse house = s.reSet();
+            
+            txtfldLotnumber.setText(String.valueOf(house.getLotNumber()));
+            txtfldFirstname.setText(house.getFirstName());
+            txtfldLastname.setText(house.getLastName());
+            txtfldPrice.setText(String.valueOf(house.getPrice()));
+            txtfldSquarefeet.setText(String.valueOf(house.getSquareFeet()));
+            txtfldNumberofbedrooms.setText(String.valueOf(house.getBedRooms()));
+        } catch (IOException ex) {
+            Logger.getLogger(UserView.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnResetActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
