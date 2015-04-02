@@ -190,7 +190,6 @@ public class UserView extends javax.swing.JFrame {
       }
       catch(IOException ex) {
           JOptionPane.showMessageDialog(null,"Please add data");
-          
       }
     }//GEN-LAST:event_btnNextActionPerformed
 
