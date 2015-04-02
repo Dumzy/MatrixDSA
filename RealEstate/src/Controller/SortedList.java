@@ -74,5 +74,10 @@ public class SortedList {
             index++;
             JOptionPane.showMessageDialog(null, "End Of Houses");
         }
+        else {
+            house = (ListHouse) list1.get(index);
+            index++;
+            list1.clear();
+        }
     }
 }
