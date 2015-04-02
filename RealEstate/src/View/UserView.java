@@ -204,7 +204,8 @@ public class UserView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
-      try{
+      SortedList.list1.clear();
+        try{
           h.getData();
           
              if(list.size() != 0){
