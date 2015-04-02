@@ -79,5 +79,6 @@ public class SortedList {
             index++;
             list1.clear();
         }
+        return house;
     }
 }
