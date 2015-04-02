@@ -8,6 +8,7 @@ package Controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -71,7 +72,7 @@ public class SortedList {
             index = 0;
             house = (ListHouse) list1.get(index);
             index++;
-            
+            JOptionPane.showMessageDialog(null, "End Of Houses");
         }
     }
 }
