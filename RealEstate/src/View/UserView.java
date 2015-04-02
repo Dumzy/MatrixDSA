@@ -165,8 +165,12 @@ public class UserView extends javax.swing.JFrame {
             txtfldPrice.setText(String.valueOf(house.getPrice()));
             txtfldSquarefeet.setText(String.valueOf(house.getSquareFeet()));
             txtfldNumberofbedrooms.setText(String.valueOf(house.getBedRooms()));
+            } catch (FileNotFoundException ex) {
+            jLabel1.setText("Please Enter Data to reset");
         } catch (IOException ex) {
-            Logger.getLogger(UserView.class.getName()).log(Level.SEVERE, null, ex);
+            jLabel1.setText("Error");
+            } catch (IndexOutOfBoundsException ex) {
+            jLabel1.setText("Please Enter Data reset");
         }
     }//GEN-LAST:event_btnResetActionPerformed
 
