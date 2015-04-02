@@ -222,7 +222,7 @@ public class UserView extends javax.swing.JFrame {
           }
       catch(NullPointerException ex) {
           JOptionPane.showMessageDialog(null,"");
-          jLabel1.setText("Please Enter Data To The File");
+         
       }
       catch(FileNotFoundException ex){
           jLabel1.setText("Please Enter Data Next");
@@ -231,6 +231,9 @@ public class UserView extends javax.swing.JFrame {
           Logger.getLogger(RealEstate.class.getName()).log(Level.SEVERE, null, ex);
          
       }
+        catch(IndexOutOfBoundsException ex){
+          jLabel1.setText("Please enter data reset next");   
+        }
     }//GEN-LAST:event_btnNextActionPerformed
 
     private void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
