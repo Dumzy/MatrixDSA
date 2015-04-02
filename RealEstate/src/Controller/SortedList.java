@@ -81,4 +81,10 @@ public class SortedList {
         }
         return house;
     }
+    
+    public ListHouse reSet(){  
+        index = 1;
+        house = (ListHouse) list1.get(0);
+        return house;
+    }
 }
