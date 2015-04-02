@@ -8,6 +8,7 @@ package Controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,6 +19,7 @@ public class SortedList {
     public static List list1 = new ArrayList(); 
     ListHouse house;
     private boolean found = false;
+    public static int index = 0;
     
     public boolean checkHouse(int lotNumber){
         
@@ -64,5 +66,19 @@ public class SortedList {
         return house;
               
       }
-    
+    public ListHouse nextHouse(){
+        
+        if(index == list1.size()){
+            index = 0;
+            house = (ListHouse) list1.get(index);
+            index++;
+            JOptionPane.showMessageDialog(null, "End Of Houses");
+        }
+        else {
+            house = (ListHouse) list1.get(index);
+            index++;
+            list1.clear();
+        }
+        return house;
+    }
 }
