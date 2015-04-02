@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import realestate.RealEstate;
 
 /**
  *
@@ -204,32 +205,35 @@ public class UserView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
-      try{
+      SortedList.list1.clear();
+        try{
           h.getData();
           
-             if(list.size() != 0){
-                 ListHouse house = h.nextHouse();
-                 
+             
+                 ListHouse house = s.nextHouse();
+                 jLabel1.setText("Next House Displayed");
                  txtfldLotnumber.setText(String.valueOf(house.getLotNumber()));
                  txtfldFirstname.setText(house.getFirstName());
                  txtfldLastname.setText(house.getLastName());
                  txtfldPrice.setText(String.valueOf(house.getPrice()));
                  txtfldSquarefeet.setText(String.valueOf(house.getSquareFeet()));
                  txtfldNumberofbedrooms.setText(String.valueOf(house.getBedRooms()));
-             }
+             
           }
-      catch(IndexOutOfBoundsException ex) {
+      catch(NullPointerException ex) {
           JOptionPane.showMessageDialog(null,"Error");
-          jLabel1.setText("Please Enter Data To The File");
+         
       }
       catch(FileNotFoundException ex){
-          JOptionPane.showMessageDialog(null,"File not found");
-          jLabel1.setText("Please Enter Data To The File");
+          jLabel1.setText("Please Enter Data Next");
       }
       catch(IOException ex) {
-          JOptionPane.showMessageDialog(null,"Please add data");
-          
+          Logger.getLogger(RealEstate.class.getName()).log(Level.SEVERE, null, ex);
+         
       }
+        catch(IndexOutOfBoundsException ex){
+          jLabel1.setText("Please enter data reset next");   
+        }
     }//GEN-LAST:event_btnNextActionPerformed
 
     private void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
