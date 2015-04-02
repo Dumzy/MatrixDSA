@@ -229,7 +229,7 @@ public class UserView extends javax.swing.JFrame {
       }
       catch(IOException ex) {
           Logger.getLogger(RealEstate.class.getName()).log(Level.SEVERE, null, ex);
-         
+           jLabel1.setText("Error");
       }
         catch(IndexOutOfBoundsException ex){
           jLabel1.setText("Please enter data reset next");   
