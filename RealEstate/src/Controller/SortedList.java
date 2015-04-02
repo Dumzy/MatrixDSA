@@ -64,5 +64,10 @@ public class SortedList {
         return house;
               
       }
-    
+    public ListHouse nextHouse(){
+        
+        if(index == list1.size()){
+            
+        }
+    }
 }
