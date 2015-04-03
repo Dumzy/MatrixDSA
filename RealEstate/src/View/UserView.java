@@ -67,8 +67,9 @@ public class UserView extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 50));
+        jLabel1.setFont(new java.awt.Font("Segoe WP Semibold", 0, 16)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 330, 50));
         jPanel1.add(txtfldLotnumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 190, 30));
         jPanel1.add(txtfldFirstname, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 190, 30));
         jPanel1.add(txtfldLastname, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 190, 30));
@@ -76,30 +77,43 @@ public class UserView extends javax.swing.JFrame {
         jPanel1.add(txtfldSquarefeet, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 190, 30));
         jPanel1.add(txtfldNumberofbedrooms, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, 190, 30));
 
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 102, 204));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel7.setText("Number Of Bedrooms");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 140, 30));
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 102, 204));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel6.setText("Square Feet");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 140, 30));
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 102, 204));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel5.setText("Price");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 140, 30));
 
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 102, 204));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Last Name");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 140, 30));
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 102, 204));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("First Name");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 140, 30));
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 102, 204));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Lot Number");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 140, 30));
 
+        btnReset.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         btnReset.setText("Reset");
         btnReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,6 +122,7 @@ public class UserView extends javax.swing.JFrame {
         });
         jPanel1.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 170, 40));
 
+        btnAdd.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         btnAdd.setText("Add");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,6 +131,7 @@ public class UserView extends javax.swing.JFrame {
         });
         jPanel1.add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 170, 40));
 
+        btnClear.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         btnClear.setText("Clear");
         btnClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,6 +140,7 @@ public class UserView extends javax.swing.JFrame {
         });
         jPanel1.add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 170, 40));
 
+        btnFind.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         btnFind.setText("Find");
         btnFind.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,6 +149,7 @@ public class UserView extends javax.swing.JFrame {
         });
         jPanel1.add(btnFind, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, 170, 40));
 
+        btnDelete.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,6 +158,7 @@ public class UserView extends javax.swing.JFrame {
         });
         jPanel1.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, 170, 40));
 
+        btnNext.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         btnNext.setText("Next");
         btnNext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,7 +177,7 @@ public class UserView extends javax.swing.JFrame {
             // TODO add your handling code here:
             h.getData();
             ListHouse house = s.reSet();
-            
+            jLabel1.setText("First House in the File");
             txtfldLotnumber.setText(String.valueOf(house.getLotNumber()));
             txtfldFirstname.setText(house.getFirstName());
             txtfldLastname.setText(house.getLastName());
@@ -166,11 +185,11 @@ public class UserView extends javax.swing.JFrame {
             txtfldSquarefeet.setText(String.valueOf(house.getSquareFeet()));
             txtfldNumberofbedrooms.setText(String.valueOf(house.getBedRooms()));
             } catch (FileNotFoundException ex) {
-            jLabel1.setText("Please Enter Data to reset");
+            jLabel1.setText("Please Enter Data to File");
         } catch (IOException ex) {
             jLabel1.setText("Error");
             } catch (IndexOutOfBoundsException ex) {
-            jLabel1.setText("Please Enter Data reset");
+            jLabel1.setText("Error");
         }
     }//GEN-LAST:event_btnResetActionPerformed
 
@@ -214,7 +233,7 @@ public class UserView extends javax.swing.JFrame {
             } catch (IOException ex) {
                 jLabel1.setText("Error");
             } catch (IndexOutOfBoundsException ex) {
-                jLabel1.setText("Please Enter Data Add");
+                jLabel1.setText("Error");
             } catch (NumberFormatException ex) {
                 jLabel1.setText("Please Check Your Details");
             }
@@ -226,9 +245,9 @@ public class UserView extends javax.swing.JFrame {
         try{
           h.getData();
           
-             
-                 ListHouse house = s.nextHouse();
-                 jLabel1.setText("Next House Displayed");
+             jLabel1.setText("Next House Displayed");
+                 ListHouse house = s.nextHouse(jLabel1);
+                 
                  txtfldLotnumber.setText(String.valueOf(house.getLotNumber()));
                  txtfldFirstname.setText(house.getFirstName());
                  txtfldLastname.setText(house.getLastName());
@@ -242,7 +261,7 @@ public class UserView extends javax.swing.JFrame {
          
       }
       catch(FileNotFoundException ex){
-          jLabel1.setText("Please Enter Data Next");
+          jLabel1.setText("Please Enter Data to File");
       }
       catch(IOException ex) {
           Logger.getLogger(RealEstate.class.getName()).log(Level.SEVERE, null, ex);
@@ -260,7 +279,7 @@ public class UserView extends javax.swing.JFrame {
             h.getData();
 //            int position = lh.compareTo(Integer.parseInt(txtfldLotnumber.getText()));
             ListHouse house = s.find(Integer.parseInt(txtfldLotnumber.getText()));
-            
+            jLabel1.setText("House Found");
             txtfldLotnumber.setText(String.valueOf(house.getLotNumber()));
             txtfldFirstname.setText(house.getFirstName());
             txtfldLastname.setText(house.getLastName());
@@ -271,14 +290,16 @@ public class UserView extends javax.swing.JFrame {
             
             
         } catch (NullPointerException ex) {
-            System.out.println("error");
+            jLabel1.setText("No House Found");
         } catch (FileNotFoundException ex) {
-            jLabel1.setText("Please Enter Data find");
+            jLabel1.setText("Please Enter Data to find");
         } catch (IOException ex) {
-            Logger.getLogger(UserView.class.getName()).log(Level.SEVERE, null, ex);
+            jLabel1.setText("Error");
         } catch (IndexOutOfBoundsException ex) {
             jLabel1.setText("Please Enter Data find");
-        } 
+        } catch (NumberFormatException ex) {
+            jLabel1.setText("Please Check Your Lot Number");
+        }
     }//GEN-LAST:event_btnFindActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
@@ -287,6 +308,16 @@ public class UserView extends javax.swing.JFrame {
          try {
             h.getData();
             List newList = s.delete(Integer.parseInt(txtfldLotnumber.getText()));
+            
+            txtfldLotnumber.setText(null);
+            txtfldFirstname.setText(null);
+            txtfldLastname.setText(null);
+            txtfldPrice.setText(null);
+            txtfldSquarefeet.setText(null);
+            txtfldNumberofbedrooms.setText(null);
+               
+            jLabel1.setText("Deleted");
+                
             h.deleteFile();
             
               for (int j = 0; j < newList.size(); j++) {
@@ -299,13 +330,13 @@ public class UserView extends javax.swing.JFrame {
                 h.addData(house);
             }
               } catch (FileNotFoundException ex) {
-            jLabel1.setText("Please Enter Data delete");
+            jLabel1.setText("Please Enter Data to File");
         } catch (IOException ex) {
             Logger.getLogger(UserView.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IndexOutOfBoundsException ex) {
             jLabel1.setText("Please Enter Data delete");
         } catch (NumberFormatException ex) {
-            jLabel1.setText("Please Enter Data Lot Number");
+            jLabel1.setText("Please Check Lot Number");
         }
     
     }//GEN-LAST:event_btnDeleteActionPerformed
@@ -317,6 +348,7 @@ public class UserView extends javax.swing.JFrame {
         txtfldPrice.setText(null);
         txtfldSquarefeet.setText(null);
         txtfldNumberofbedrooms.setText(null);
+        jLabel1.setText(null);
         SortedList.list1.clear();
     }//GEN-LAST:event_btnClearActionPerformed
 
