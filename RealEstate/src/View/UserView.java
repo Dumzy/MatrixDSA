@@ -154,7 +154,24 @@ public class UserView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
-        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+            h.getData();
+            ListHouse house = s.reSet();
+            
+            txtfldLotnumber.setText(String.valueOf(house.getLotNumber()));
+            txtfldFirstname.setText(house.getFirstName());
+            txtfldLastname.setText(house.getLastName());
+            txtfldPrice.setText(String.valueOf(house.getPrice()));
+            txtfldSquarefeet.setText(String.valueOf(house.getSquareFeet()));
+            txtfldNumberofbedrooms.setText(String.valueOf(house.getBedRooms()));
+            } catch (FileNotFoundException ex) {
+            jLabel1.setText("Please Enter Data to reset");
+        } catch (IOException ex) {
+            jLabel1.setText("Error");
+            } catch (IndexOutOfBoundsException ex) {
+            jLabel1.setText("Please Enter Data reset");
+        }
     }//GEN-LAST:event_btnResetActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
@@ -229,7 +246,7 @@ public class UserView extends javax.swing.JFrame {
       }
       catch(IOException ex) {
           Logger.getLogger(RealEstate.class.getName()).log(Level.SEVERE, null, ex);
-         
+           jLabel1.setText("Error");
       }
         catch(IndexOutOfBoundsException ex){
           jLabel1.setText("Please enter data reset next");   
@@ -254,7 +271,7 @@ public class UserView extends javax.swing.JFrame {
             
             
         } catch (NullPointerException ex) {
-            System.out.println("fsdfsdfs");
+            System.out.println("error");
         } catch (FileNotFoundException ex) {
             jLabel1.setText("Please Enter Data find");
         } catch (IOException ex) {
