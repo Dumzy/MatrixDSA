@@ -8,6 +8,7 @@ package Controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 /**
@@ -66,19 +67,26 @@ public class SortedList {
         return house;
               
       }
-    public ListHouse nextHouse(){
+    public ListHouse nextHouse(JLabel lbl){
         
         if(index == list1.size()){
             index = 0;
             house = (ListHouse) list1.get(index);
             index++;
             JOptionPane.showMessageDialog(null, "End Of Houses");
+            lbl.setText("First House in the File");
         }
         else {
             house = (ListHouse) list1.get(index);
             index++;
             list1.clear();
         }
+        return house;
+    }
+    
+    public ListHouse reSet(){  
+        index = 1;
+        house = (ListHouse) list1.get(0);
         return house;
     }
 }
