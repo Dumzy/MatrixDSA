@@ -273,11 +273,11 @@ public class UserView extends javax.swing.JFrame {
         } catch (NullPointerException ex) {
             System.out.println("error");
         } catch (FileNotFoundException ex) {
-            jLabel1.setText("Please Enter Data find");
+            jLabel1.setText("Please Enter Data to find");
         } catch (IOException ex) {
             Logger.getLogger(UserView.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IndexOutOfBoundsException ex) {
-            jLabel1.setText("Please Enter Data find");
+            jLabel1.setText("Please Enter Data to find");
         } 
     }//GEN-LAST:event_btnFindActionPerformed
 
