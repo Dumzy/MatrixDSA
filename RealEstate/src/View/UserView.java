@@ -271,7 +271,7 @@ public class UserView extends javax.swing.JFrame {
             
             
         } catch (NullPointerException ex) {
-            System.out.println("fsdfsdfs");
+            System.out.println("error");
         } catch (FileNotFoundException ex) {
             jLabel1.setText("Please Enter Data find");
         } catch (IOException ex) {
