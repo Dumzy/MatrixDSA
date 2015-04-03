@@ -6,19 +6,20 @@
 
 package realestate;
 
+import View.UserView;
+
 /**
  *
  * @author Milton
  */
 public class RealEstate {
-    public static int n = 0;
-    
-
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        UserView u = new UserView();
+        u.setVisible(true);
+        
     }
     
 }
